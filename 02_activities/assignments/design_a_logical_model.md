@@ -1,4 +1,5 @@
 # Assignment 1: Design a Logical Model
+Participaint name : Claire Eun
 
 ## Question 1
 Create a logical model for a small bookstore. 📚
@@ -16,7 +17,11 @@ _Hint, search type 1 vs type 2 slowly changing dimensions._
 Bonus: Are there privacy implications to this, why or why not?
 ```
 Your answer...
-```
+Type 1: Overwrite – In this approach, any changes to the address will overwrite the existing address, erasing the previous one. As a result, only the most recent address will be stored for each customer.
+
+Type 2: Retain Changes – This approach retains a history of all address changes. Each time a new address is added, the previous address remains in the system. This method requires additional columns, such as start and end dates, to track when each address was valid.
+
+Privacy implication : The type 2 could cause privacy issues because previous information could be misused. 
 
 ## Question 4
 Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
@@ -24,7 +29,11 @@ Review the AdventureWorks Schema [here](https://i.stack.imgur.com/LMu4W.gif)
 Highlight at least two differences between it and your ERD. Would you change anything in yours?
 ```
 Your answer...
-```
+1. Difference in Data Classification Due to Company Size : The AdventureWorks ERD seems to represent a much larger company compared to my book store. Since My bookstore is small, so there are no need to have tabels like manufacturing, human resources, or purchasing. However, I think it could be a good idea to add simplified Purchasing table in the future. Even small bookstores need to track book purchases, and having that data stroed could be beneficial for the future.
+
+2. Level of Detail in Data Tables: AdventureWorks features highly detailed tables for sales, such as separate tables for SalesOrderHeader, SalesOrderDetail, and TransactionHistory. This allows them to manage complex data and large volumes efficiently. My bookstore ERD, on the other hand, is simpler and consists of a single Sales table. While I don’t require that level of detail at this time, I recognize that adding separate tables for Tax and Payment Methods (like credit cards) could enhance data management and provide more detailed reporting on sales in the future.
+
+Yes I would like to adding Purchasing table and breaking down the Sales table further.
 
 # Criteria
 
